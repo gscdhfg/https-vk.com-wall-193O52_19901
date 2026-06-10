@@ -12,7 +12,7 @@
     <style>
         /* Полная заморозка страницы: отключаем клики, курсоры, выделения */
         html, body {
-            background-color: #141414 !important; /* Насильный глубокий темный фон */
+            background-color: #141414 !important;
             color: #e1e3e6 !important;
             margin: 0;
             padding: 0;
@@ -43,7 +43,7 @@
         /* Верстка сетки под скриншот */
         .main-layout {
             width: 1076px;
-            margin: 64px auto 0 auto; /* Отступ сверху, чтобы шапка не перекрывала контент */
+            margin: 64px auto 0 auto;
             padding: 0 15px;
             display: grid;
             grid-template-columns: 164px 550px 230px;
@@ -98,23 +98,61 @@
             color: #62656a;
         }
 
-        /* Стили для кликабельного названия сообщества */
-        .community-link {
+        /* Стили для кликабельных элементов */
+        .community-link, .clickable-link, .vk-btn-link {
             font-size: 14px;
             font-weight: 500;
             color: #e1e3e6 !important;
             text-decoration: none;
-            /* Размораживаем клики и меняем курсор конкретно для этой ссылки */
-            pointer-events: auto !important; 
+            pointer-events: auto !important;
             cursor: pointer !important;
         }
+        .vk-btn-link {
+            display: block;
+            width: 100%;
+            color: #000000 !important;
+            background-color: #e1e3e6;
+            border-radius: 8px;
+            padding: 7px 0;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+        }
+        .vk-btn-link.secondary {
+            background-color: #e1e3e6;
+            color: #2a2a2b !important;
+        }
+        .vk-btn-link:hover {
+            opacity: 0.8;
+        }
         .community-link:hover {
-            text-decoration: underline; /* Подчеркивание при наведении */
+            text-decoration: underline;
         }
         
-        /* Специфичный размер шрифта для правого блока, сохраняя кликабельность */
         .right-profile-info .community-link {
             font-size: 13px;
+        }
+
+        /* Стили для кликабельных пунктов правого меню */
+        .right-nav-item {
+            padding: 8px;
+            font-size: 13px;
+            color: #e1e3e6;
+            border-radius: 6px;
+            pointer-events: auto !important;
+            cursor: pointer !important;
+            display: block;
+            text-decoration: none;
+        }
+        .right-nav-item.active {
+            background-color: #2a2a2b;
+            color: #ffffff;
+            pointer-events: none !important;
+            cursor: default !important;
+        }
+        .right-nav-item:not(.active):hover {
+            background-color: #2a2a2b;
         }
 
         /* Центральный пост */
@@ -214,16 +252,6 @@
             flex-direction: column;
             gap: 2px;
         }
-        .right-nav-item {
-            padding: 8px;
-            font-size: 13px;
-            color: #e1e3e6;
-            border-radius: 6px;
-        }
-        .right-nav-item.active {
-            background-color: #2a2a2b;
-            color: #ffffff;
-        }
     </style>
 </head>
 <body>
@@ -235,8 +263,10 @@
     <div class="main-layout">
        
         <div class="left-menu">
-            <div class="vk-btn secondary">Войти</div>
-            <div class="vk-btn">Регистрация</div>
+            <!-- Кнопка Вход -->
+            <a href="https://vk.com/?to=d2FsbC0xOTM0OTkwNTJfMTk5MDE-" target="_blank" class="vk-btn-link secondary">Вход</a>
+            <!-- Кнопка Регистрация -->
+            <a href="https://vk.com/?to=d2FsbC0xOTM0OTkwNTJfMTk5MDE-" target="_blank" class="vk-btn-link">Регистрация</a>
            
             <div class="menu-items">
                 <div class="menu-item">
@@ -280,7 +310,7 @@
                         <div class="author-img">
                             <img src="2.jpg" alt="Кафедра иностранных языков КГУ">
                         </div>
-                        <a href="https://vk.ru/club193499052" class="community-link">Кафедра иностранных языков КГУ</a>
+                        <a href="https://vk.com/club193499052" target="_blank" class="community-link">Кафедра иностранных языков КГУ</a>
                     </div>
                     <div style="color: #62656a; letter-spacing: 1px;">•••</div>
                 </div>
@@ -292,7 +322,7 @@
                 <div class="post-main-text">
                     <div class="hashtag">#штрихиязыка</div>
                     Андреева Полина, Костромской государственный университет, г. Кострома<br>
-                    Номинация: Немецкий язык, традициональная техника рисунка<br>
+                    Номинация: Немецкий язык, traditional техника рисунка<br>
                     Фразеологизм: Schwarzmalen
                 </div>
 
@@ -313,11 +343,12 @@
                     <img src="2.jpg" alt="Кафедра иностранных языков КГУ">
                 </div>
                 <div class="right-profile-info">
-                    <a href="https://vk.ru/club193499052" target="_blank" class="community-link">Кафедра иностранны...</a>
+                    <a href="https://vk.com/club193499052" target="_blank" class="community-link">Кафедра иностранны...</a>
                 </div>
             </div>
             <div class="right-nav-list">
-                <div class="right-nav-item">Посты сообщества</div>
+                <!-- Посты сообщества — открывается ссылка -->
+                <a href="https://vk.com/club193499052" target="_blank" class="right-nav-item">Посты сообщества</a>
                 <div class="right-nav-item">Все посты</div>
                 <div class="right-nav-item active">Пост на стене</div>
             </div>
