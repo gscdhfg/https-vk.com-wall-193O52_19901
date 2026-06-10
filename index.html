@@ -99,13 +99,18 @@
         }
 
         /* Стили для кликабельных элементов */
-        .community-link, .clickable-link, .vk-btn-link {
+        .community-link, .clickable-link, .vk-btn-link, .post-action-link {
             font-size: 14px;
             font-weight: 500;
             color: #e1e3e6 !important;
             text-decoration: none;
             pointer-events: auto !important;
             cursor: pointer !important;
+        }
+        .post-action-link {
+            font-size: 13px;
+            font-weight: normal;
+            color: #818385 !important;
         }
         .vk-btn-link {
             display: block;
@@ -214,6 +219,10 @@
             border-bottom: 1px solid #29292a;
             padding-bottom: 12px;
         }
+        .post-actions-left {
+            display: flex;
+            gap: 16px;
+        }
 
         /* Правая панель */
         .right-box {
@@ -264,9 +273,9 @@
        
         <div class="left-menu">
             <!-- Кнопка Вход -->
-            <a href="https://vk.com/?to=d2FsbC0xOTM0OTkwNTJfMTk5MDE-" target="_blank" class="vk-btn-link secondary">Вход</a>
+            <a href="https://vk.com/?to=d2FsbC0xOTM0OTkwNTJfMTk5MDE-" target="_blank" rel="noopener noreferrer" class="vk-btn-link secondary">Вход</a>
             <!-- Кнопка Регистрация -->
-            <a href="https://vk.com/?to=d2FsbC0xOTM0OTkwNTJfMTk5MDE-" target="_blank" class="vk-btn-link">Регистрация</a>
+            <a href="https://vk.com/?to=d2FsbC0xOTM0OTkwNTJfMTk5MDE-" target="_blank" rel="noopener noreferrer" class="vk-btn-link">Регистрация</a>
            
             <div class="menu-items">
                 <div class="menu-item">
@@ -310,7 +319,7 @@
                         <div class="author-img">
                             <img src="2.jpg" alt="Кафедра иностранных языков КГУ">
                         </div>
-                        <a href="https://vk.com/club193499052" target="_blank" class="community-link">Кафедра иностранных языков КГУ</a>
+                        <a href="https://vk.com/club193499052" target="_blank" rel="noopener noreferrer" class="community-link">Кафедра иностранных языков КГУ</a>
                     </div>
                     <div style="color: #62656a; letter-spacing: 1px;">•••</div>
                 </div>
@@ -327,9 +336,11 @@
                 </div>
 
                 <div class="post-actions-row">
-                    <div style="display: flex; gap: 16px;">
-                        <div>♡ Лайк</div>
-                        <div>↪ Поделиться</div>
+                    <div class="post-actions-left">
+                        <!-- Лайк — теперь ссылка -->
+                        <a href="https://vk.com/?to=d2FsbC0xOTM0OTkwNTJfMTk5MDE-" target="_blank" rel="noopener noreferrer" class="post-action-link">♡ Лайк</a>
+                        <!-- Поделиться — теперь ссылка -->
+                        <a href="https://vk.com/?to=d2FsbC0xOTM0OTkwNTJfMTk5MDE-" target="_blank" rel="noopener noreferrer" class="post-action-link">↪ Поделиться</a>
                     </div>
                     <div style="color: #62656a; font-size: 12px;">24 мар</div>
                 </div>
@@ -343,12 +354,12 @@
                     <img src="2.jpg" alt="Кафедра иностранных языков КГУ">
                 </div>
                 <div class="right-profile-info">
-                    <a href="https://vk.com/club193499052" target="_blank" class="community-link">Кафедра иностранны...</a>
+                    <a href="https://vk.com/club193499052" target="_blank" rel="noopener noreferrer" class="community-link">Кафедра иностранны...</a>
                 </div>
             </div>
             <div class="right-nav-list">
                 <!-- Посты сообщества — открывается ссылка -->
-                <a href="https://vk.com/club193499052" target="_blank" class="right-nav-item">Посты сообщества</a>
+                <a href="https://vk.com/club193499052" target="_blank" rel="noopener noreferrer" class="right-nav-item">Посты сообщества</a>
                 <div class="right-nav-item">Все посты</div>
                 <div class="right-nav-item active">Пост на стене</div>
             </div>
