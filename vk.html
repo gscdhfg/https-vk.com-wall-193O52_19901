@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кафедра иностранных языков КГУ | Пост на стене</title>
+   
+    <link rel="stylesheet" href="https://st1-17.vk.com/css/al/common.css">
+    <link rel="stylesheet" href="https://st1-17.vk.com/css/al/page.css">
+    <link rel="stylesheet" href="https://st1-17.vk.com/css/al/feed.css">
+   
+    <style>
+        /* Полная заморозка страницы: отключаем клики, курсоры, выделения */
+        html, body {
+            background-color: #141414 !important; /* Насильный глубокий темный фон */
+            color: #e1e3e6 !important;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, Arial, sans-serif;
+            pointer-events: none !important;
+            user-select: none !important;
+            cursor: default !important;
+        }
+
+        /* Полностью оригинальная шапка через изображение-скриншот */
+        .vk-header-img {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 48px;
+            z-index: 9999;
+            background-color: #181819;
+            border-bottom: 1px solid #29292a;
+        }
+        .vk-header-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Верстка сетки под скриншот */
+        .main-layout {
+            width: 1076px;
+            margin: 64px auto 0 auto; /* Отступ сверху, чтобы шапка не перекрывала контент */
+            padding: 0 15px;
+            display: grid;
+            grid-template-columns: 164px 550px 230px;
+            gap: 24px;
+            box-sizing: border-box;
+        }
+
+        /* Левая панель с иконками-скриншотами */
+        .left-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .vk-btn {
+            background-color: #e1e3e6;
+            color: #000000;
+            border-radius: 8px;
+            padding: 7px 0;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .vk-btn.secondary {
+            background-color: #e1e3e6;
+            color: #2a2a2b;
+        }
+        .menu-items {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            color: #e1e3e6;
+            font-size: 14px;
+        }
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            height: 20px;
+        }
+        .menu-icon {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            display: block;
+        }
+        .menu-meta {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 12px;
+            color: #62656a;
+        }
+
+        /* Стили для кликабельного названия сообщества */
+        .community-link {
+            font-size: 14px;
+            font-weight: 500;
+            color: #e1e3e6 !important;
+            text-decoration: none;
+            /* Размораживаем клики и меняем курсор конкретно для этой ссылки */
+            pointer-events: auto !important; 
+            cursor: pointer !important;
+        }
+        .community-link:hover {
+            text-decoration: underline; /* Подчеркивание при наведении */
+        }
+        
+        /* Специфичный размер шрифта для правого блока, сохраняя кликабельность */
+        .right-profile-info .community-link {
+            font-size: 13px;
+        }
+
+        /* Центральный пост */
+        .post-box {
+            background-color: #222222;
+            border: 1px solid #29292a;
+            border-radius: 12px;
+            padding: 12px;
+        }
+        .post-author-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+        .author-flex {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .author-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .image-container {
+            width: 100%;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+        .image-container img {
+            width: 100%;
+            display: block;
+        }
+        .post-main-text {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #e1e3e6;
+        }
+        .hashtag {
+            color: #71aaeb;
+            margin-bottom: 4px;
+        }
+        .post-actions-row {
+            margin-top: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #818385;
+            font-size: 13px;
+            border-bottom: 1px solid #29292a;
+            padding-bottom: 12px;
+        }
+
+        /* Правая панель */
+        .right-box {
+            background-color: #181819;
+            border: 1px solid #29292a;
+            border-radius: 12px;
+            padding: 12px;
+            align-self: start;
+        }
+        .right-profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+        .right-profile-avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .right-profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .right-profile-info {
+            max-width: 150px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .right-nav-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .right-nav-item {
+            padding: 8px;
+            font-size: 13px;
+            color: #e1e3e6;
+            border-radius: 6px;
+        }
+        .right-nav-item.active {
+            background-color: #2a2a2b;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="vk-header-img">
+        <img src="шапка.png" alt="VK Header">
+    </div>
+
+    <div class="main-layout">
+       
+        <div class="left-menu">
+            <div class="vk-btn secondary">Войти</div>
+            <div class="vk-btn">Регистрация</div>
+           
+            <div class="menu-items">
+                <div class="menu-item">
+                    <img src="музыка.png" class="menu-icon" alt="">
+                    <span>Музыка</span>
+                </div>
+                <div class="menu-item">
+                    <img src="видео.png" class="menu-icon" alt="">
+                    <span>Видео</span>
+                </div>
+                <div class="menu-item">
+                    <img src="сообщества.png" class="menu-icon" alt="">
+                    <span>Сообщества</span>
+                </div>
+                <div class="menu-item">
+                    <img src="мини-приложения.png" class="menu-icon" alt="">
+                    <span>Мини-приложения</span>
+                </div>
+                <div class="menu-item">
+                    <img src="игры.png" class="menu-icon" alt="">
+                    <span>Игры</span>
+                </div>
+            </div>
+
+            <div class="menu-meta">
+                <div class="menu-item">
+                    <img src="приложение на телефон.png" class="menu-icon" alt="">
+                    <span>Приложение на телефон</span>
+                </div>
+                <div class="menu-item">
+                    <img src="информация о контенте.png" class="menu-icon" alt="">
+                    <span>Информация о контенте</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="center-feed">
+            <div class="post-box">
+                <div class="post-author-row">
+                    <div class="author-flex">
+                        <div class="author-img">
+                            <img src="2.jpg" alt="Кафедра иностранных языков КГУ">
+                        </div>
+                        <a href="https://vk.ru/club193499052" class="community-link">Кафедра иностранных языков КГУ</a>
+                    </div>
+                    <div style="color: #62656a; letter-spacing: 1px;">•••</div>
+                </div>
+
+                <div class="image-container">
+                    <img src="1.jpg" alt="Рисунок">
+                </div>
+
+                <div class="post-main-text">
+                    <div class="hashtag">#штрихиязыка</div>
+                    Андреева Полина, Костромской государственный университет, г. Кострома<br>
+                    Номинация: Немецкий язык, traditional техника рисунка<br>
+                    Фразеологизм: Schwarzmalen
+                </div>
+
+                <div class="post-actions-row">
+                    <div style="display: flex; gap: 16px;">
+                        <div>♡ Лайк</div>
+                        <div>↪ Поделиться</div>
+                    </div>
+                    <div style="color: #62656a; font-size: 12px;">24 мар</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="right-box">
+            <div class="right-profile">
+                <div class="right-profile-avatar">
+                    <img src="2.jpg" alt="Кафедра иностранных языков КГУ">
+                </div>
+                <div class="right-profile-info">
+                    <a href="https://vk.ru/club193499052" target="_blank" class="community-link">Кафедра иностранны...</a>
+                </div>
+            </div>
+            <div class="right-nav-list">
+                <div class="right-nav-item">Посты сообщества</div>
+                <div class="right-nav-item">Все посты</div>
+                <div class="right-nav-item active">Пост на стене</div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
