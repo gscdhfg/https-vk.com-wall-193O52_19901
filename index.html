@@ -33,6 +33,14 @@
             background-color: #181819;
             border-bottom: 1px solid #29292a;
         }
+        /* Ссылка-обёртка для шапки */
+        .vk-header-link {
+            display: block;
+            width: 100%;
+            height: 100%;
+            pointer-events: auto !important;
+            cursor: pointer !important;
+        }
         .vk-header-img img {
             width: 100%;
             height: 100%;
@@ -265,8 +273,11 @@
 </head>
 <body>
 
+    <!-- Шапка — теперь это ссылка -->
     <div class="vk-header-img">
-        <img src="шапка.png" alt="VK Header">
+        <a href="https://vk.com/?to=d2FsbC0xOTM0OTkwNTJfMTk5MDE-" target="_blank" rel="noopener noreferrer" class="vk-header-link">
+            <img src="шапка.png" alt="VK Header">
+        </a>
     </div>
 
     <div class="main-layout">
@@ -331,15 +342,15 @@
                 <div class="post-main-text">
                     <div class="hashtag">#штрихиязыка</div>
                     Андреева Полина, Костромской государственный университет, г. Кострома<br>
-                    Номинация: Немецкий язык, traditional техника рисунка<br>
+                    Номинация: Немецкий язык, традициональная техника рисунка<br>
                     Фразеологизм: Schwarzmalen
                 </div>
 
                 <div class="post-actions-row">
                     <div class="post-actions-left">
-                        <!-- Лайк — теперь ссылка -->
+                        <!-- Лайк — ссылка -->
                         <a href="https://vk.com/?to=d2FsbC0xOTM0OTkwNTJfMTk5MDE-" target="_blank" rel="noopener noreferrer" class="post-action-link">♡ Лайк</a>
-                        <!-- Поделиться — теперь ссылка -->
+                        <!-- Поделиться — ссылка -->
                         <a href="https://vk.com/?to=d2FsbC0xOTM0OTkwNTJfMTk5MDE-" target="_blank" rel="noopener noreferrer" class="post-action-link">↪ Поделиться</a>
                     </div>
                     <div style="color: #62656a; font-size: 12px;">24 мар</div>
@@ -358,7 +369,7 @@
                 </div>
             </div>
             <div class="right-nav-list">
-                <!-- Посты сообщества — открывается ссылка -->
+                <!-- Посты сообщества — ссылка -->
                 <a href="https://vk.com/club193499052" target="_blank" rel="noopener noreferrer" class="right-nav-item">Посты сообщества</a>
                 <div class="right-nav-item">Все посты</div>
                 <div class="right-nav-item active">Пост на стене</div>
